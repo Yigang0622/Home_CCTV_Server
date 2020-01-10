@@ -35,10 +35,10 @@ def servo_reposition():
 
         if servo_id == 0:
             print(0,'to',angle)
-            s0.repostion(angle)
+            s0.reposition(angle)
 
         elif servo_id == 1:
-            s1.repostion(angle)
+            s1.reposition(angle)
             print(1,"to",angle)
 
         return "OK"

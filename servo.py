@@ -30,19 +30,20 @@ class MyServo(object):
 
 
 
-	def repostion(self,angle):
+	def reposition(self,angle):
+		if angle < 0 or angle > 180:
+			print("Invalid position angle,", angle)
+			return
 		duty_cycle = self.b + self.a*(angle/180)
 		self.pwm.ChangeDutyCycle(duty_cycle)
 
 	def reset(self):
 		print("电机PIN",self.pin,"复位")
-		self.repostion(self.default_postion)
+		self.reposition(self.default_postion)
 
 	def release(self):
 		print("伺服电机",self.pin,"释放")
 		self.pwm.stop()
- 
 
 
 
- 
